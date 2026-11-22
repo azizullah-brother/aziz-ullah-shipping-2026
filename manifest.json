@@ -1,0 +1,18 @@
+{
+  "name": "Aziz Ullah & Brother",
+  "short_name": "AUB Import",
+  "description": "Import Export Management System",
+  "start_url": "/aziz-ullah-shipping-2026/",
+  "scope": "/aziz-ullah-shipping-2026/",
+  "display": "standalone",
+  "background_color": "#f3f6fa",
+  "theme_color": "#10243e",
+  "icons": [
+    {
+      "src": "app-icon.svg",
+      "sizes": "any",
+      "type": "image/svg+xml",
+      "purpose": "any"
+    }
+  ]
+}
