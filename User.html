@@ -1,98 +1,210 @@
-<!doctype html>
+<!DOCTYPE html>
 <html lang="en">
 <head>
-<meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1">
-<title>AZIZ ULLAH & BROTHER — User Records</title>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>ARYAAN | Shipping Records Portal</title>
 <style>
-*{box-sizing:border-box}body{margin:0;background:#f2f5f8;color:#172b42;font:14px Arial,sans-serif}
-.top{background:linear-gradient(135deg,#07182b,#123d67 65%,#174d58);color:#fff;padding:18px 16px 12px;border-bottom:4px solid #d7b65f}
-.brandline{display:flex;align-items:center;gap:12px}.brandmark{width:55px;height:55px;border:2px solid #d7b65f;border-radius:50%;display:grid;place-items:center;color:#f2d98c;font-weight:900;font-size:17px;flex:none}
-h1{font-size:clamp(19px,4vw,27px);margin:0 0 5px;letter-spacing:.5px}.brandline p{margin:0;color:#e7d08a;font-size:11px;letter-spacing:1px}
-.goldline{height:2px;background:linear-gradient(90deg,transparent,#d7b65f,transparent);margin:12px 0 8px}.tagline{text-align:center;margin:0;color:#e9edf3;font-size:12px;letter-spacing:1.4px}
-.dryfruit-strip{display:grid;grid-template-columns:repeat(4,1fr);gap:7px;margin:13px auto 8px;max-width:850px}
-.fruit-item{height:65px;position:relative;overflow:hidden;border:1px solid #d7b65f;border-radius:7px;background:#243c50}
-.fruit-item img{width:100%;height:100%;object-fit:cover;opacity:.68}.fruit-item b{position:absolute;bottom:4px;left:0;right:0;text-align:center;font-size:9px;letter-spacing:.7px;text-shadow:0 1px 3px #000}
-.header-aryaan{display:flex;align-items:center;justify-content:center;gap:12px;color:#e8c978;font: bold 12px Georgia;letter-spacing:4px;margin:9px auto}
-.header-aryaan-line{height:1px;width:55px;background:#c8a04c}.ship-art{max-width:310px;margin:4px auto 0;text-align:center;color:#e8d08a;font-size:10px;letter-spacing:2px}
-.account{display:none;align-items:center;justify-content:space-between;gap:10px;flex-wrap:wrap;padding:10px 14px;background:#102f4c;color:white}
-button{border:0;border-radius:7px;background:#145da0;color:white;padding:10px 14px;font-weight:bold;cursor:pointer}
-#loginGate{min-height:55vh;display:grid;place-items:center;padding:18px}
-.login-card{width:min(410px,100%);background:white;border:1px solid #d7b65f;border-radius:16px;padding:24px;box-shadow:0 8px 25px #102b4918;text-align:center}
-.login-card h2{margin:0;color:#123d67}.login-sub{font-size:11px;letter-spacing:1.4px;color:#6b7d90;margin:8px 0 18px}
-input,select{padding:10px;border:1px solid #cbd5e1;border-radius:7px;background:white;font:inherit}
-.login-card input{display:block;width:100%;margin:9px 0}.login-card button{width:100%;margin-top:8px;background:linear-gradient(100deg,#0c2b4b,#1b5b85);border:1px solid #c49a3a}
-#error{min-height:20px;color:#b42332;font-size:12px;margin-top:9px}
-#app{display:none;padding:14px;max-width:100%}.notice{padding:11px;background:#fff6d9;border:1px solid #ead48c;border-radius:8px;margin-bottom:12px;color:#634d00}
-.toolbar{display:flex;gap:8px;flex-wrap:wrap;margin:12px 0}.toolbar input{flex:1;min-width:190px}
-.filters{display:grid;grid-template-columns:repeat(auto-fit,minmax(155px,1fr));gap:9px;padding:12px;margin-bottom:12px;background:#fff;border:1px solid #d4dfeb;border-top:3px solid #c49a3a;border-radius:10px}
-.filters label{display:flex;flex-direction:column;gap:5px;font-size:11px;font-weight:bold;color:#244967}.filters input,.filters select{width:100%}
-.count{display:inline-block;background:#e8f2ff;color:#145da0;padding:6px 10px;border-radius:20px;margin-bottom:9px}
-.tablebox{overflow:auto;background:white;border-radius:10px;border:1px solid #cbd7e5;max-height:72vh}
-table{border-collapse:separate;border-spacing:0;min-width:2100px;width:100%;font-size:12px}
-th,td{border-right:1px solid #d9e2ed;border-bottom:1px solid #d9e2ed;padding:9px 8px;white-space:nowrap;text-align:left}
-th{position:sticky;top:0;background:linear-gradient(110deg,#123b66,#176b78,#754b83,#a36b32);color:white;z-index:2}
-tbody tr:nth-child(even){background:#f4f8fc}tbody tr:hover{background:#eaf3fc}.serial{position:sticky;left:0;background:#e8eef5;font-weight:bold;z-index:1}
-.empty{text-align:center;padding:25px;color:#68788a;white-space:normal}
-footer{text-align:center;color:#8a6926;font-family:Georgia,serif;font-weight:bold;letter-spacing:2px;padding:20px}
-@media(max-width:600px){.top{padding:14px 10px}.dryfruit-strip{gap:4px}.fruit-item{height:50px}.fruit-item b{font-size:7px}#app{padding:9px}}
-</style></head><body>
-<header class="top">
- <div class="brandline"><div class="brandmark">A&amp;B</div><div><h1>AZIZ ULLAH &amp; BROTHER</h1><p>IMPORT &amp; EXPORT MANAGEMENT SYSTEM</p></div></div>
- <div class="goldline"></div><p class="tagline">PROFESSIONAL SHIPMENT &amp; CONTAINER RECORDS</p>
- <div class="dryfruit-strip">
-  <div class="fruit-item"><img alt="Almonds" src="https://images.pexels.com/photos/6316683/pexels-photo-6316683.jpeg?auto=compress&amp;cs=tinysrgb&amp;w=420"><b>ALMOND</b></div>
-  <div class="fruit-item"><img alt="Mixed dry fruits" src="https://www.bosschernoten.nl/media/catalog/product/c/r/cranberry_mix-1280x1280-vierkant-jpg.jpg"><b>MIX DRY FRUITS</b></div>
-  <div class="fruit-item"><img alt="Dried coconut" src="https://staticsmaker.iplsc.com/smaker_production_2025_08_18/59ab606e9863ccbef9e6569a30fd9c82-content.jpg"><b>DRY COCONUT</b></div>
-  <div class="fruit-item"><img alt="Cashews" src="https://images.pexels.com/photos/4663476/pexels-photo-4663476.jpeg?auto=compress&amp;cs=tinysrgb&amp;w=420"><b>CASHEW</b></div>
- </div>
- <div class="header-aryaan"><span class="header-aryaan-line"></span>ARYAAN<span class="header-aryaan-line"></span></div>
- <div class="ship-art">⚓ &nbsp; SHIPPING RECORDS PORTAL &nbsp; ⚓</div>
+:root{--navy:#10243a;--blue:#173f63;--gold:#d7ad55;--bg:#f3f6fa;--ink:#172536;--muted:#66778a;--line:#dce4ec}
+*{box-sizing:border-box}body{margin:0;background:var(--bg);font-family:Arial,Helvetica,sans-serif;color:var(--ink)}
+header{background:linear-gradient(115deg,#0b1d30,#1c4b70);color:white;padding:22px 18px 18px;border-bottom:4px solid var(--gold)}
+.head{max-width:1400px;margin:auto;display:flex;align-items:center;justify-content:space-between;gap:15px;flex-wrap:wrap}
+.brand{display:flex;align-items:center;gap:13px}.logo{width:52px;height:52px;border:2px solid var(--gold);border-radius:50%;display:grid;place-items:center;color:var(--gold);font-weight:800;font-size:19px}
+h1{font-size:25px;letter-spacing:2px;margin:0 0 5px}.subtitle{font-size:12px;letter-spacing:2px;color:#e9d4a6}
+.header-right{text-align:right;font-size:12px;color:#dbe7f1}
+nav{background:#fff;border-bottom:1px solid var(--line);box-shadow:0 2px 8px #14283c0a}
+.nav-inner{max-width:1400px;margin:auto;padding:0 18px;display:flex;align-items:center;gap:8px;min-height:48px}
+.nav-item{font-size:13px;font-weight:700;color:#31516e;padding:15px 12px;border-bottom:3px solid transparent}
+.nav-item.active{color:#102e49;border-color:var(--gold)}
+.wrap{max-width:1400px;margin:22px auto;padding:0 16px}
+.panel{background:white;border:1px solid var(--line);border-radius:13px;box-shadow:0 5px 22px #1b35500a}
+.login-panel{max-width:440px;margin:55px auto;padding:28px}
+.login-panel h2{margin:0 0 7px;color:var(--navy)}.muted{color:var(--muted);font-size:13px;line-height:1.5}
+label{display:block;font-size:13px;font-weight:700;margin:17px 0 7px}
+input{width:100%;padding:12px 13px;border:1px solid #cbd6e1;border-radius:8px;font-size:15px;outline:none}
+input:focus{border-color:#3d719d;box-shadow:0 0 0 3px #3d719d18}
+button{border:0;border-radius:8px;padding:11px 16px;font-weight:700;cursor:pointer}
+.primary{background:var(--blue);color:white;width:100%;margin-top:18px}.primary:hover{background:#24577f}
+.error{color:#b42318;background:#fff1f0;border-radius:7px;padding:10px;margin-top:12px;font-size:13px;display:none}
+.toolbar{padding:18px;display:flex;align-items:center;justify-content:space-between;gap:14px;flex-wrap:wrap}
+.toolbar h2{margin:0;color:var(--navy);font-size:20px}.toolbar p{margin:5px 0 0;color:var(--muted);font-size:13px}
+.actions{display:flex;gap:9px;align-items:center;flex-wrap:wrap}.actions input{width:min(340px,75vw)}
+.logout{background:#edf2f7;color:#29445e}
+.stats{display:flex;gap:10px;flex-wrap:wrap;padding:0 18px 16px}
+.stat{background:#f4f7fa;border:1px solid var(--line);border-radius:9px;padding:10px 14px;min-width:125px}
+.stat b{display:block;font-size:20px;color:var(--navy)}.stat span{font-size:11px;color:var(--muted);text-transform:uppercase;letter-spacing:.6px}
+.table-wrap{overflow:auto;border-top:1px solid var(--line);border-radius:0 0 13px 13px}
+table{border-collapse:collapse;width:100%;min-width:1800px;font-size:12px}
+th{background:#173f63;color:white;text-align:left;position:sticky;top:0;z-index:1;padding:12px 10px;white-space:nowrap}
+td{padding:10px;border-bottom:1px solid #e8edf2;white-space:nowrap}
+tbody tr:nth-child(even){background:#f8fafc}tbody tr:hover{background:#eef5fb}
+.status{padding:10px 18px;color:var(--muted);font-size:13px}
+.empty{text-align:center;padding:35px;color:var(--muted)}
+.footer{text-align:center;color:#8291a1;font-size:11px;padding:22px}
+.hidden{display:none!important}
+@media(max-width:600px){header{padding:17px 13px}.head{align-items:flex-start}.header-right{text-align:left}h1{font-size:21px}.wrap{margin:14px auto;padding:0 10px}.login-panel{margin:25px auto;padding:22px}.toolbar{padding:14px}.toolbar h2{font-size:18px}.stats{padding:0 14px 14px}}
+</style>
+</head>
+<body>
+<header>
+  <div class="head">
+    <div class="brand">
+      <div class="logo">A</div>
+      <div><h1>ARYAAN</h1><div class="subtitle">SHIPPING &amp; LOGISTICS RECORDS</div></div>
+    </div>
+    <div class="header-right">AUTHORIZED USER PORTAL<br>Shipment Information System</div>
+  </div>
 </header>
-<div id="loginGate"><form class="login-card" id="loginForm"><h2>Secure User Login</h2><div class="login-sub">VIEW-ONLY SHIPPING RECORDS</div><input id="loginId" autocomplete="username" placeholder="User ID or Admin Email" required><input id="password" type="password" autocomplete="current-password" placeholder="Password" required><button id="loginBtn" type="submit">LOGIN</button><div id="error" aria-live="polite"></div></form></div>
-<div class="account" id="accountBar"><strong id="accountLabel">USER</strong><button id="logoutBtn" type="button">LOG OUT</button></div>
-<main id="app">
- <div class="notice"><b>USER VIEW:</b> Records dekhne aur search karne ki sahulat. Editing aur deleting disabled hain.</div>
- <div class="toolbar"><input id="search" placeholder="Search any column…" type="search"><button id="clearBtn" type="button">CLEAR FILTERS</button></div>
- <section class="filters">
-  <label>CONT No Search<input id="contSearch" placeholder="Search CONT No"></label><label>B/L No Search<input id="blSearch" placeholder="Search B/L No"></label>
-  <label>FCL No Search<input id="fclSearch" placeholder="Search FCL No"></label><label>Size Search<input id="sizeSearch" placeholder="Search Size"></label>
-  <label>Party<select id="partyFilter"><option value="">All Parties</option></select></label><label>Brand Name<select id="brandFilter"><option value="">All Brands</option></select></label>
-  <label>Consignee<select id="consigneeFilter"><option value="">All Consignees</option></select></label><label>Dubai Party<select id="dubaiFilter"><option value="">All Dubai Parties</option></select></label>
-  <label>Recd Date<input id="dateFilter" type="date"></label>
- </section>
- <div class="count" id="count">Loading records…</div><div class="tablebox"><table><thead id="head"></thead><tbody id="body"><tr><td class="empty">Please wait…</td></tr></tbody></table></div>
- <footer>PROUDLY DEVELOPED BY ARYAAN<br><small>AZIZ ULLAH &amp; BROTHER · IMPORT &amp; EXPORT</small></footer>
+<nav><div class="nav-inner"><div class="nav-item active">USER DASHBOARD</div><div class="nav-item">SHIPMENT RECORDS</div><div class="nav-item">VIEW ONLY ACCESS</div></div></nav>
+
+<main class="wrap">
+  <section id="loginSection" class="panel login-panel">
+    <h2>User Login</h2>
+    <p class="muted">Apna User ID aur password enter karein.</p>
+    <form id="loginForm">
+      <label for="loginId">User ID</label>
+      <input id="loginId" autocomplete="username" placeholder="Enter User ID" required>
+      <label for="password">Password</label>
+      <input id="password" type="password" autocomplete="current-password" placeholder="Enter password" required>
+      <button class="primary" id="loginBtn" type="submit">LOGIN TO PORTAL</button>
+      <div id="loginError" class="error"></div>
+    </form>
+    <p class="muted" style="margin-top:18px">This portal provides read-only access. Records cannot be edited or deleted here.</p>
+  </section>
+
+  <section id="recordsSection" class="panel hidden">
+    <div class="toolbar">
+      <div><h2>Shipment Records</h2><p>Live records from the administration system</p></div>
+      <div class="actions">
+        <input id="searchBox" placeholder="Search any shipment record..." type="search">
+        <button class="logout" id="logoutBtn">Logout</button>
+      </div>
+    </div>
+    <div class="stats">
+      <div class="stat"><b id="totalCount">0</b><span>Total Records</span></div>
+      <div class="stat"><b id="shownCount">0</b><span>Showing</span></div>
+      <div class="stat"><b>VIEW ONLY</b><span>Access Level</span></div>
+    </div>
+    <div id="recordStatus" class="status">Connecting to database...</div>
+    <div class="table-wrap">
+      <table><thead><tr id="tableHead"></tr></thead><tbody id="tableBody"></tbody></table>
+    </div>
+  </section>
+  <div class="footer">ARYAAN SHIPPING &amp; LOGISTICS · Secure User Portal</div>
 </main>
-<script src="https://www.gstatic.com/firebasejs/10.12.2/firebase-app-compat.js"></script><script src="https://www.gstatic.com/firebasejs/10.12.2/firebase-auth-compat.js"></script><script src="https://www.gstatic.com/firebasejs/10.12.2/firebase-database-compat.js"></script>
+
+<script src="https://www.gstatic.com/firebasejs/10.12.2/firebase-app-compat.js"></script>
+<script src="https://www.gstatic.com/firebasejs/10.12.2/firebase-auth-compat.js"></script>
+<script src="https://www.gstatic.com/firebasejs/10.12.2/firebase-database-compat.js"></script>
 <script>
-const firebaseConfig={
- apiKey:"PASTE_EXISTING_FIREBASE_API_KEY_HERE",
- authDomain:"aziz-ullah.firebaseapp.com",
- databaseURL:"https://aziz-ullah-default-rtdb.asia-southeast1.firebasedatabase.app",
- projectId:"aziz-ullah",storageBucket:"aziz-ullah.firebasestorage.app",
- messagingSenderId:"989075859123",appId:"1:989075859123:web:9d24d0eec875f90ddf72c6",measurementId:"G-GPM3NYN1HP"
+const firebaseConfig = {
+  apiKey: "AIzaSyAZwKw34VPC9x4U9DaSIWqbnPoNMwDGBSc",
+  authDomain: "aziz-ullah.firebaseapp.com",
+  databaseURL: "https://aziz-ullah-default-rtdb.asia-southeast1.firebasedatabase.app",
+  projectId: "aziz-ullah",
+  storageBucket: "aziz-ullah.firebasestorage.app",
+  messagingSenderId: "989075859123",
+  appId: "1:989075859123:web:9d24d0eec875f90ddf72c6",
+  measurementId: "G-GPM3NYN1HP"
 };
-const ADMIN_UID="e5PWQr2cmXUnBJzFZ6GTgbMfW122", USER_LOGIN_DOMAIN="login.azizullah.app";
-const cols=['Date','CONT No','QTY','SIZE','Brand Name','RAT','Rat CNT','PARTY','SHIPMENT','ETA Date','Crop','Consignee','B/L No','Container Number','Godam','Recd Date','Payment Detail','Tax','Dubai party','FCL No','Lot No','PV No','DHL NO','Free Days','Bill No'];
-firebase.initializeApp(firebaseConfig);const auth=firebase.auth(),db=firebase.database();
-let records=[];
-const $=id=>document.getElementById(id);
-const esc=v=>String(v??'').replace(/[&<>"']/g,c=>({'&':'&amp;','<':'&lt;','>':'&gt;','"':'&quot;',"'":'&#39;'}[c]));
-function emailFor(v){v=String(v||'').trim();return v.includes('@')?v:v.toLowerCase().replace(/[^a-z0-9._-]/g,'')+'@'+USER_LOGIN_DOMAIN;}
-function errorMsg(s){$('error').textContent=s;}
-async function startUser(user){
- if(user.uid!==ADMIN_UID){const snap=await db.ref('roles/'+user.uid).once('value'),role=snap.val();if(!role||role.role!=='viewer'||role.active!==true){await auth.signOut();errorMsg('Account active nahi. Admin se rabta karein.');return;}}
- $('loginGate').style.display='none';$('accountBar').style.display='flex';$('app').style.display='block';$('accountLabel').textContent='VIEW ONLY · '+(user.email||'USER');loadRecords();
+firebase.initializeApp(firebaseConfig);
+const auth = firebase.auth();
+const db = firebase.database();
+
+const cols = ['Date','CONT No','QTY','SIZE','Brand Name','RAT','Rat CNT','PARTY','SHIPMENT','ETA Date','Crop','Consignee','B/L No','Container Number','Godam','Recd Date','Payment Detail','Tax','Dubai party','FCL No','Lot No','PV No','DHL NO','Free Days','Bill No'];
+let allRecords = [];
+let recordsRef = null;
+
+const loginSection = document.getElementById('loginSection');
+const recordsSection = document.getElementById('recordsSection');
+const loginError = document.getElementById('loginError');
+const recordStatus = document.getElementById('recordStatus');
+
+function showError(message){ loginError.textContent = message; loginError.style.display = 'block'; }
+function hideError(){ loginError.textContent = ''; loginError.style.display = 'none'; }
+
+function renderTable(){
+  const q = document.getElementById('searchBox').value.trim().toLowerCase();
+  const filtered = allRecords.filter(r => cols.some(c => {
+    const v = c === 'RAT' ? (r.RAT ?? r['RAT ($)'] ?? '') : (r[c] ?? '');
+    return String(v).toLowerCase().includes(q);
+  }));
+  document.getElementById('totalCount').textContent = allRecords.length;
+  document.getElementById('shownCount').textContent = filtered.length;
+  const head = document.getElementById('tableHead');
+  head.innerHTML = cols.map(c => '<th>'+escapeHtml(c)+'</th>').join('');
+  const body = document.getElementById('tableBody');
+  if(!filtered.length){
+    body.innerHTML = '<tr><td class="empty" colspan="'+cols.length+'">'+(allRecords.length ? 'Search se koi record nahi mila.' : 'Cloud mein records abhi upload nahi hue. Admin app se pehle records sync karna hoga.')+'</td></tr>';
+    return;
+  }
+  body.innerHTML = filtered.map(r => '<tr>'+cols.map(c => {
+    const v = c === 'RAT' ? (r.RAT ?? r['RAT ($)'] ?? '') : (r[c] ?? '');
+    return '<td>'+escapeHtml(v)+'</td>';
+  }).join('')+'</tr>').join('');
 }
-$('loginForm').addEventListener('submit',async e=>{e.preventDefault();$('loginBtn').disabled=true;errorMsg('');try{await auth.signInWithEmailAndPassword(emailFor($('loginId').value),$('password').value);}catch(err){errorMsg(err.message||'Login failed');}finally{$('loginBtn').disabled=false;}});
-auth.onAuthStateChanged(u=>{if(u)startUser(u).catch(e=>errorMsg(e.message));});
-$('logoutBtn').onclick=()=>auth.signOut();
-function rowsFrom(d){if(Array.isArray(d))return d;if(d&&typeof d==='object')return Object.keys(d).sort((a,b)=>Number(a)-Number(b)).map(k=>d[k]).filter(x=>x&&typeof x==='object');return [];}
-function val(r,c){return c==='RAT'?(r.RAT??r['RAT ($)']??''):(r[c]??'');}
-function loadRecords(){$('count').textContent='Cloud se records load ho rahe hain…';db.ref('records').on('value',s=>{if(s.val()===null){records=[];$('body').innerHTML='<tr><td class="empty" colspan="26">Cloud mein records abhi upload nahi hue. Admin app se pehle records sync karna hoga.</td></tr>';$('count').textContent='0 records';return;}records=rowsFrom(s.val());options();render();},e=>{$('body').innerHTML='<tr><td class="empty" colspan="26">'+esc(e.message)+'</td></tr>';});}
-function options(){[['partyFilter','PARTY','All Parties'],['brandFilter','Brand Name','All Brands'],['consigneeFilter','Consignee','All Consignees'],['dubaiFilter','Dubai party','All Dubai Parties']].forEach(([id,c,label])=>{let el=$(id),old=el.value,vs=[...new Set(records.map(r=>String(val(r,c)).trim()).filter(Boolean))].sort();el.innerHTML='<option value="">'+label+'</option>'+vs.map(v=>'<option>'+esc(v)+'</option>').join('');if(vs.includes(old))el.value=old;});}
-function filtered(){let q=$('search').value.toLowerCase().trim();return records.map((r,i)=>({r,i})).filter(({r})=>(!q||cols.some(c=>String(val(r,c)).toLowerCase().includes(q)))&&[['CONT No','contSearch'],['B/L No','blSearch'],['FCL No','fclSearch'],['SIZE','sizeSearch']].every(([c,id])=>!$(id).value.trim()||String(val(r,c)).toLowerCase().includes($(id).value.trim().toLowerCase()))&&(! $('partyFilter').value||String(val(r,'PARTY'))===$('partyFilter').value)&&(! $('brandFilter').value||String(val(r,'Brand Name'))===$('brandFilter').value)&&(! $('consigneeFilter').value||String(val(r,'Consignee'))===$('consigneeFilter').value)&&(! $('dubaiFilter').value||String(val(r,'Dubai party'))===$('dubaiFilter').value)&&(!$('dateFilter').value||String(val(r,'Recd Date')).slice(0,10)===$('dateFilter').value));}
-function render(){$('head').innerHTML='<tr><th>S.No</th>'+cols.map(c=>'<th>'+esc(c)+'</th>').join('')+'</tr>';let rs=filtered();$('count').textContent=records.length+' total records · '+rs.length+' shown';$('body').innerHTML=rs.length?rs.map(({r,i})=>'<tr><td class="serial">'+(i+1)+'</td>'+cols.map(c=>'<td>'+esc(val(r,c))+'</td>').join('')+'</tr>').join(''):'<tr><td class="empty" colspan="26">Koi matching record nahi mila.</td></tr>';}
-['search','contSearch','blSearch','fclSearch','sizeSearch','partyFilter','brandFilter','consigneeFilter','dubaiFilter','dateFilter'].forEach(id=>$(id).addEventListener('input',render));
-$('clearBtn').onclick=()=>{['search','contSearch','blSearch','fclSearch','sizeSearch','partyFilter','brandFilter','consigneeFilter','dubaiFilter','dateFilter'].forEach(id=>$(id).value='');render();};
-</script></body></html>
+function escapeHtml(value){
+  return String(value == null ? '' : value).replace(/[&<>"']/g, ch => ({'&':'&amp;','<':'&lt;','>':'&gt;','"':'&quot;',"'":'&#39;'}[ch]));
+}
+function stopRecordsListener(){
+  if(recordsRef){recordsRef.off();recordsRef=null;}
+}
+function startRecordsListener(){
+  stopRecordsListener();
+  recordStatus.textContent = 'Loading shipment records...';
+  recordsRef = db.ref('records');
+  recordsRef.on('value', snap => {
+    const data = snap.val();
+    if(Array.isArray(data)) allRecords = data.filter(x => x && typeof x === 'object');
+    else if(data && typeof data === 'object') allRecords = Object.keys(data).sort((a,b)=>Number(a)-Number(b)).map(k=>data[k]).filter(x=>x && typeof x === 'object');
+    else allRecords = [];
+    recordStatus.textContent = 'Live database connection · Last updated: ' + new Date().toLocaleString();
+    renderTable();
+  }, err => {
+    recordStatus.textContent = 'Records load nahi ho sake: ' + err.message;
+  });
+}
+async function checkUserRole(user){
+  const snap = await db.ref('roles/' + user.uid).once('value');
+  const roleData = snap.val();
+  if(!roleData || roleData.active !== true || roleData.role !== 'viewer'){
+    throw new Error('Aapka account active viewer account nahi hai. Admin se access check karwayein.');
+  }
+}
+document.getElementById('loginForm').addEventListener('submit', async e => {
+  e.preventDefault(); hideError();
+  const btn = document.getElementById('loginBtn');
+  const enteredId = document.getElementById('loginId').value.trim();
+  const password = document.getElementById('password').value;
+  const email = enteredId.includes('@') ? enteredId : enteredId + '@login.azizullah.app';
+  btn.disabled = true; btn.textContent = 'PLEASE WAIT...';
+  try{
+    const credential = await auth.signInWithEmailAndPassword(email, password);
+    await checkUserRole(credential.user);
+    loginSection.classList.add('hidden');
+    recordsSection.classList.remove('hidden');
+    startRecordsListener();
+  }catch(err){
+    if(auth.currentUser) await auth.signOut();
+    showError(err.message || 'Login nahi ho saka. User ID aur password check karein.');
+  }finally{
+    btn.disabled = false; btn.textContent = 'LOGIN TO PORTAL';
+  }
+});
+document.getElementById('logoutBtn').addEventListener('click', async () => {
+  stopRecordsListener(); allRecords = []; await auth.signOut();
+  recordsSection.classList.add('hidden'); loginSection.classList.remove('hidden');
+  document.getElementById('password').value = '';
+});
+document.getElementById('searchBox').addEventListener('input', renderTable);
+auth.onAuthStateChanged(async user => {
+  if(!user) return;
+  try{
+    await checkUserRole(user);
+    loginSection.classList.add('hidden'); recordsSection.classList.remove('hidden');
+    startRecordsListener();
+  }catch(e){ await auth.signOut(); }
+});
+</script>
+</body>
+</html>
