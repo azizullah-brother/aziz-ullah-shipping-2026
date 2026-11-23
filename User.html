@@ -1,0 +1,147 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<title>AZIZ ULLAH & BROTHER | User Records</title>
+<style>
+*{box-sizing:border-box}body{margin:0;background:#f3f6fa;color:#172033;font:14px Arial,sans-serif}
+header{background:linear-gradient(120deg,#071b35,#123d67 60%,#17605d);color:#fff;padding:22px 18px;border-bottom:4px solid #c9a44c}
+.brand{display:flex;align-items:center;gap:13px}.mark{width:54px;height:54px;border:2px solid #d7b65f;border-radius:50%;display:grid;place-items:center;color:#f3d98b;font-weight:900;font-size:17px}
+h1{font-size:clamp(19px,4vw,28px);margin:0 0 5px}header p{margin:0;color:#f1d990;font-size:11px;letter-spacing:1px}
+#loginGate{min-height:calc(100vh - 110px);display:grid;place-items:center;padding:18px}
+.login-card{width:min(410px,100%);background:white;border:1px solid #d7b65f;border-radius:18px;padding:25px;box-shadow:0 12px 35px #102b4920;text-align:center}
+.login-card h2{margin:0;color:#123d67}.sub{color:#64788d;margin:8px 0 20px;font-size:11px;letter-spacing:1.5px}
+input,select{padding:11px;border:1px solid #cbd5e1;border-radius:7px;background:white;font:inherit}
+.login-card input{display:block;width:100%;margin:9px 0;text-align:center}
+button{border:0;border-radius:7px;background:#145da0;color:#fff;padding:11px 14px;font-weight:700;cursor:pointer}
+.login-card button{width:100%;margin-top:8px;background:linear-gradient(100deg,#0c2b4b,#1b5b85);border:1px solid #c49a3a}
+#error{min-height:20px;color:#b42332;font-size:12px;margin-top:10px}
+#app{display:none;padding:14px;max-width:100%}
+.account{display:flex;justify-content:space-between;align-items:center;gap:10px;flex-wrap:wrap;background:#102f4c;color:#fff;padding:10px 14px}
+.toolbar{display:flex;gap:8px;flex-wrap:wrap;margin:12px 0}.toolbar input{flex:1;min-width:200px}
+.filters{display:grid;grid-template-columns:repeat(auto-fit,minmax(160px,1fr));gap:9px;padding:12px;margin-bottom:12px;background:#fff;border:1px solid #d4dfeb;border-top:3px solid #c49a3a;border-radius:10px}
+.filters label{display:flex;flex-direction:column;gap:5px;font-size:11px;font-weight:700;color:#244967}.filters input,.filters select{width:100%}
+.count{display:inline-block;background:#e8f2ff;color:#145da0;padding:5px 9px;border-radius:20px;margin-bottom:9px}
+.tablebox{overflow:auto;background:#fff;border-radius:10px;border:1px solid #cbd7e5;max-height:72vh}
+table{border-collapse:separate;border-spacing:0;min-width:2100px;width:100%;font-size:12px}
+th,td{border-right:1px solid #d9e2ed;border-bottom:1px solid #d9e2ed;padding:9px 8px;white-space:nowrap;text-align:left}
+th{position:sticky;top:0;background:linear-gradient(110deg,#123b66,#176b78,#754b83,#a36b32);color:#fff;z-index:2}
+tbody tr:nth-child(even){background:#f4f8fc}tbody tr:hover{background:#eaf3fc}
+.serial{position:sticky;left:0;background:#e8eef5;font-weight:bold;z-index:1}
+.empty{text-align:center;padding:25px;color:#68788a;white-space:normal}
+.notice{padding:11px;background:#fff6d9;border:1px solid #ead48c;border-radius:8px;margin-bottom:12px;color:#634d00}
+footer{text-align:center;color:#8a6926;font-family:Georgia,serif;font-weight:bold;letter-spacing:2px;padding:22px}
+@media(max-width:600px){header{padding:17px 12px}.mark{width:46px;height:46px;flex-basis:46px}#app{padding:9px}.tablebox{max-height:65vh}}
+</style>
+</head>
+<body>
+<header><div class="brand"><div class="mark">A&amp;B</div><div><h1>AZIZ ULLAH &amp; BROTHER</h1><p>SHIPMENT &amp; CONTAINER RECORDS · USER VIEW</p></div></div></header>
+<div id="loginGate">
+ <form class="login-card" id="loginForm">
+  <h2>Secure User Login</h2><div class="sub">VIEW-ONLY SHIPPING RECORDS</div>
+  <input id="loginId" autocomplete="username" placeholder="User ID or Email" required>
+  <input id="password" type="password" autocomplete="current-password" placeholder="Password" required>
+  <button id="loginBtn" type="submit">LOGIN</button><div id="error" aria-live="polite"></div>
+ </form>
+</div>
+<div class="account" id="accountBar" style="display:none"><strong id="accountLabel">USER</strong><button id="logoutBtn" type="button">LOG OUT</button></div>
+<main id="app">
+ <div class="notice"><b>View-only access:</b> You can search and view shipment records. Editing and deleting are disabled.</div>
+ <div class="toolbar"><input id="search" placeholder="Search any column (Container, B/L, FCL, Party...)" type="search"><button id="clearBtn" type="button">Clear filters</button></div>
+ <section class="filters">
+  <label>CONT No<input id="contSearch" placeholder="Search CONT No"></label>
+  <label>B/L No<input id="blSearch" placeholder="Search B/L No"></label>
+  <label>FCL No<input id="fclSearch" placeholder="Search FCL No"></label>
+  <label>Size<input id="sizeSearch" placeholder="Search Size"></label>
+  <label>Party<select id="partyFilter"><option value="">All Parties</option></select></label>
+  <label>Brand Name<select id="brandFilter"><option value="">All Brands</option></select></label>
+  <label>Consignee<select id="consigneeFilter"><option value="">All Consignees</option></select></label>
+  <label>Dubai Party<select id="dubaiFilter"><option value="">All Dubai Parties</option></select></label>
+  <label>Recd Date<input id="dateFilter" type="date"></label>
+ </section>
+ <div class="count" id="count">Loading records…</div>
+ <div class="tablebox"><table><thead id="head"></thead><tbody id="body"><tr><td class="empty">Please wait…</td></tr></tbody></table></div>
+ <footer>ARYAAN · AZIZ ULLAH &amp; BROTHER</footer>
+</main>
+<script src="https://www.gstatic.com/firebasejs/10.12.2/firebase-app-compat.js"></script>
+<script src="https://www.gstatic.com/firebasejs/10.12.2/firebase-auth-compat.js"></script>
+<script src="https://www.gstatic.com/firebasejs/10.12.2/firebase-database-compat.js"></script>
+<script>
+const firebaseConfig={
+ apiKey:"AIzaSyAZwKw34VPC9x4U9DaSIWqbnPoNMwDGBSc",
+ authDomain:"aziz-ullah.firebaseapp.com",
+ databaseURL:"https://aziz-ullah-default-rtdb.asia-southeast1.firebasedatabase.app",
+ projectId:"aziz-ullah",
+ storageBucket:"aziz-ullah.firebasestorage.app",
+ messagingSenderId:"989075859123",
+ appId:"1:989075859123:web:9d24d0eec875f90ddf72c6",
+ measurementId:"G-GPM3NYN1HP"
+};
+const ADMIN_UID="e5PWQr2cmXUnBJzFZ6GTgbMfW122";
+const USER_LOGIN_DOMAIN="login.azizullah.app";
+const cols=['Date','CONT No','QTY','SIZE','Brand Name','RAT ($)','Rat CNT','PARTY','SHIPMENT','ETA Date','Crop','Consignee','B/L No','Container Number','Godam','Recd Date','Payment Detail','Tax','Dubai party','FCL No','Lot No','PV No','DHL NO','Free Days','Bill No'];
+firebase.initializeApp(firebaseConfig);
+const auth=firebase.auth(), db=firebase.database();
+let currentUser=null, records=[];
+const $=id=>document.getElementById(id);
+const esc=v=>String(v??'').replace(/[&<>"']/g,c=>({'&':'&amp;','<':'&lt;','>':'&gt;','"':'&quot;',"'":'&#39;'}[c]));
+function authEmail(v){v=String(v||'').trim();return v.includes('@')?v:v.toLowerCase().replace(/[^a-z0-9._-]/g,'')+'@'+USER_LOGIN_DOMAIN;}
+function showError(m){$('error').textContent=m;}
+function setSignedIn(user){currentUser=user;$('loginGate').style.display='none';$('accountBar').style.display='flex';$('app').style.display='block';$('accountLabel').textContent='VIEW ONLY · '+(user.email||'USER');loadRecords();}
+async function verifyAndStart(user){
+ if(user.uid===ADMIN_UID){setSignedIn(user);return;}
+ const snap=await db.ref('roles/'+user.uid).once('value'),role=snap.val();
+ if(!role||role.role!=='viewer'||role.active!==true){await auth.signOut();showError('Account active nahi hai. Admin se rabta karein.');return;}
+ setSignedIn(user);
+ db.ref('roles/'+user.uid).on('value',s=>{const r=s.val();if(!r||r.active!==true||r.role!=='viewer'){alert('Admin ne aap ka access band kar diya hai.');auth.signOut();}});
+}
+$('loginForm').addEventListener('submit',async e=>{
+ e.preventDefault();$('loginBtn').disabled=true;$('loginBtn').textContent='PLEASE WAIT…';showError('');
+ try{await auth.signInWithEmailAndPassword(authEmail($('loginId').value),$('password').value);}
+ catch(err){showError(err.message||'Login failed.');}
+ finally{$('loginBtn').disabled=false;$('loginBtn').textContent='LOGIN';}
+});
+auth.onAuthStateChanged(user=>{if(user)verifyAndStart(user).catch(e=>showError(e.message));});
+$('logoutBtn').onclick=()=>auth.signOut();
+function normalizeRows(data){
+ if(Array.isArray(data))return data;
+ if(data&&typeof data==='object')return Object.keys(data).sort((a,b)=>Number(a)-Number(b)).map(k=>data[k]).filter(v=>v&&typeof v==='object');
+ return [];
+}
+function loadRecords(){
+ $('count').textContent='Cloud se records load ho rahe hain…';
+ db.ref('records').on('value',snap=>{
+  const data=snap.val();
+  if(data===null){records=[];$('body').innerHTML='<tr><td class="empty" colspan="26">Cloud mein records abhi upload nahi hue. Admin PC se pehle records sync karna hoga.</td></tr>';$('count').textContent='0 records';return;}
+  records=normalizeRows(data);refreshOptions();render();
+ },err=>{$('body').innerHTML='<tr><td class="empty" colspan="26">Records load nahi ho sake: '+esc(err.message)+'</td></tr>';});
+}
+function refreshOptions(){
+ const defs=[['partyFilter','PARTY','All Parties'],['brandFilter','Brand Name','All Brands'],['consigneeFilter','Consignee','All Consignees'],['dubaiFilter','Dubai party','All Dubai Parties']];
+ defs.forEach(([id,col,label])=>{const el=$(id),old=el.value,vals=[...new Set(records.map(r=>String(r[col]||'').trim()).filter(Boolean))].sort();el.innerHTML='<option value="">'+label+'</option>'+vals.map(v=>'<option value="'+esc(v)+'">'+esc(v)+'</option>').join('');if(vals.includes(old))el.value=old;});
+}
+function getFiltered(){
+ const q=$('search').value.trim().toLowerCase();
+ const specs=[['CONT No','contSearch'],['B/L No','blSearch'],['FCL No','fclSearch'],['SIZE','sizeSearch']];
+ return records.map((r,i)=>({r,i})).filter(({r})=>
+  (!q||cols.some(c=>String(r[c]??'').toLowerCase().includes(q)))&&
+  specs.every(([c,id])=>!$(id).value.trim()||String(r[c]??'').toLowerCase().includes($(id).value.trim().toLowerCase()))&&
+  (! $('partyFilter').value||String(r.PARTY||'')===$('partyFilter').value)&&
+  (! $('brandFilter').value||String(r['Brand Name']||'')===$('brandFilter').value)&&
+  (! $('consigneeFilter').value||String(r.Consignee||'')===$('consigneeFilter').value)&&
+  (! $('dubaiFilter').value||String(r['Dubai party']||'')===$('dubaiFilter').value)&&
+  (!$('dateFilter').value||String(r['Recd Date']||'').slice(0,10)===$('dateFilter').value)
+ );
+}
+function render(){
+ $('head').innerHTML='<tr><th>S.No</th>'+cols.map(c=>'<th>'+esc(c)+'</th>').join('')+'</tr>';
+ const rows=getFiltered();
+ $('count').textContent=records.length+' total records · '+rows.length+' shown';
+ $('body').innerHTML=rows.length?rows.map(({r,i})=>'<tr><td class="serial">'+(i+1)+'</td>'+cols.map(c=>'<td>'+esc(r[c]??'')+'</td>').join('')+'</tr>').join(''):'<tr><td class="empty" colspan="26">Koi matching record nahi mila.</td></tr>';
+}
+['search','contSearch','blSearch','fclSearch','sizeSearch','partyFilter','brandFilter','consigneeFilter','dubaiFilter','dateFilter'].forEach(id=>$(id).addEventListener('input',render));
+$('clearBtn').onclick=()=>{['search','contSearch','blSearch','fclSearch','sizeSearch','partyFilter','brandFilter','consigneeFilter','dubaiFilter','dateFilter'].forEach(id=>$(id).value='');render();};
+</script>
+</body>
+</html>
